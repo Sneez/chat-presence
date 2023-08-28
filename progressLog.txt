@@ -1,0 +1,11 @@
+PROGRESS LOG
+
+1. Read the documentation
+2. Looked into Pusher docs on Presence channels
+3. Read the documentation again
+4. Created vue3 app with vite
+5. Initialized git repo with new project
+6. Thought about data structure
+7. Created chatroom and user models
+8. Added dummy data for display purposes
+9. Made home page view with list of chatrooms
