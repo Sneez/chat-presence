@@ -19,3 +19,8 @@ PROGRESS LOG
 17. Researched potential popover solutions (should have done this sooner)
 18. Found vue3-popper, read through the docs and tried out a basic example
 19. Wrapped my PresencePopover component with Popper, cleaned up some styling
+20. Implemented '+n more' functionality
+21. Looked into custom directive modifiers to dynamically set max amount of users shown
+22. Decided on having max users shown in presence be driven by a chatroom property
+23. Added more dummy data for display
+24. Moved vPresence directive into its own file and imported it

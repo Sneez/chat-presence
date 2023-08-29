@@ -1,17 +1,6 @@
 <script setup lang="ts">
-import { createApp } from "vue";
-import { allChats } from '../chatrooms';   
-import PresencePopover from "./PresencePopover.vue"; 
-
-const vPresence = {
-    mounted: (el: HTMLElement, binding: any) => {
-        const div = document.createElement('div');
-        div.id ='presenceDiv'
-        el.appendChild(div);
-        createApp(PresencePopover, {chatroom: binding.value}).mount(div)
-    }
-}
-
+import { allChats } from '../models/chatrooms';   
+import { vPresence } from "../directives/vPresence"
 </script>
 
 <template>
