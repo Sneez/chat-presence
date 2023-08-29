@@ -9,3 +9,5 @@ PROGRESS LOG
 7. Created chatroom and user models
 8. Added dummy data for display purposes
 9. Made home page view with list of chatrooms
+10. Fixed up some UI (had to remove styles already in the default project)
+11. Read about VueJS Custom Directives
