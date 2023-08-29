@@ -11,3 +11,7 @@ PROGRESS LOG
 9. Made home page view with list of chatrooms
 10. Fixed up some UI (had to remove styles already in the default project)
 11. Read about VueJS Custom Directives
+12. Got a basic directive to console log users on mouseover
+13. Looked into adding components into the DOM with VueJS
+14. Figured out how to initialize a new instance of a component with Vue 3
+15. Got popover with username and images to show and remove from DOM on mouseover/mouseout
