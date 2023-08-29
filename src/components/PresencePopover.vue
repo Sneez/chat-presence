@@ -1,21 +1,26 @@
 <script setup lang="ts">
-import { User } from '../users'
+import { Chatroom } from '../chatrooms'
+import Popper from "vue3-popper";
 
 defineProps<{
-    users: Array<User>
+    chatroom: Chatroom
 }>()
 
 </script>
 
 <template>
-    <div class="section box">
-        <div class="container">
-            <div v-for="user of users" class="center-items">
+
+    <Popper hover arrow placement="right">
+        <div>{{ chatroom.name }}</div>
+        <template #content>
+            <div v-for="user of chatroom.users" class="center-items">
                 <img :src="user.imageUrl" class="user-image" />
                 <div class="user-name">{{ user.username }}</div>
             </div>
-        </div>
-    </div>
+        </template>
+    </Popper>
+
+    
 </template>
 
 <style scoped>
@@ -34,5 +39,4 @@ defineProps<{
 .user-name{
     font-size: 12px;
 }
-
 </style>
