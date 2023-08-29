@@ -8,20 +8,31 @@ defineProps<{
 </script>
 
 <template>
-    <div class="section">
+    <div class="section box">
         <div class="container">
-            <div v-for="user of users">
-                <span>{{ user.username }}</span>
+            <div v-for="user of users" class="center-items">
                 <img :src="user.imageUrl" class="user-image" />
+                <div class="user-name">{{ user.username }}</div>
             </div>
         </div>
     </div>
 </template>
 
 <style scoped>
-.user-image{
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 50px;
+
+.center-items{
+    text-align: center;
 }
+.user-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: .75px solid gray;
+    object-fit: cover;
+}
+
+.user-name{
+    font-size: 12px;
+}
+
 </style>

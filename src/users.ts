@@ -24,7 +24,7 @@ export const joshJacobs: User = {
 
 export const davanteAdams: User = {
     id: '4',
-    imageUrl: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/16800.png&w=350&h=254',
+    imageUrl: 'https://www.nflanalysis.net/wp-content/uploads/2022/03/New-Stat-Shows-How-Dominant-Raiders-WR-Davante-Adams-Has-Been.jpeg',
     username: 'Davante Adams',
 }
 
