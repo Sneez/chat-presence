@@ -1,22 +1,54 @@
 <script setup lang="ts">
+import { computed, watch } from 'vue'
 import { Chatroom } from '../models/chatrooms'
-import Popper from "vue3-popper";
+import Popper from "vue3-popper"
+import { useUsers } from '../stores/users';
+import { User } from '../models/users';
 
 const props = defineProps<{
     chatroom: Chatroom
 }>()
 
 const max = props.chatroom.maxPresence
+const userStore = useUsers()
+let currentUserId = computed(() => {
+    if(userStore.currentUserId) {
+        return userStore.currentUserId
+    }
+    else {
+        return ''
+    }
+})
+let leftOutNames = '' 
+let chatUsers = [...props.chatroom.users]
 
-let leftOutNames = ''
-// create string of usernames of users in the chat not shown (will show on hover of '+x more')
-if(props.chatroom.users.length > max) {
-    let firstFlag = true
-    props.chatroom.users.slice(max).forEach( user => {
-        firstFlag ? leftOutNames += user.username : leftOutNames += ', ' + user.username
-        if (firstFlag) firstFlag = false
-    })
+
+function generateUserList( userId?: string ){
+    chatUsers = [...props.chatroom.users]
+
+    // if current user is in chat users list, remove it
+    const isCurrentUser = (elem: User) => elem.id === userId
+    const userIndex = chatUsers.findIndex(isCurrentUser)
+    if( userIndex > -1 ){
+        chatUsers.splice( userIndex, 1 )
+    }
+
+    // create string of usernames of users in the chat not shown (will show on hover of '+x more')
+    leftOutNames = ''
+    if(chatUsers.length > max) {
+        let firstFlag = true
+        chatUsers.slice(max).forEach( user => {
+            firstFlag ? leftOutNames += user.username : leftOutNames += ', ' + user.username
+            if (firstFlag) firstFlag = false
+        })
+    }
 }
+
+generateUserList( currentUserId.value )
+
+watch(currentUserId, (newId) => {
+    generateUserList( newId )
+})
 </script>
 
 <template>
@@ -25,17 +57,16 @@ if(props.chatroom.users.length > max) {
         <div>{{ chatroom.name }}</div>
         <template #content>
             <div class="center-items">
-                <div v-for="user of chatroom.users.slice(0, max)" class="bottom-spacing">
+                <div v-for="user of chatUsers.slice(0, max)" class="bottom-spacing">
                     <img :src="user.imageUrl" class="user-image" />
                     <div class="user-name">{{ user.username }}</div>
                 </div>
-                <div v-if="chatroom.users.length > max" class="user-name" :title="leftOutNames">
-                    +{{ chatroom.users.length - max }} more
+                <div v-if="chatUsers.length > max" class="user-name" :title="leftOutNames">
+                    +{{ chatUsers.length - max }} more
                 </div>
             </div>
         </template>
     </Popper>
-
     
 </template>
 

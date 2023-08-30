@@ -76,3 +76,15 @@ export const justinJefferson: User = {
     username: 'Justin Jefferson',
 }
 
+export const allUsers: Array<User> = [lamarJackson, 
+                                        joeBurrow, 
+                                        joshJacobs, 
+                                        davanteAdams, 
+                                        nickChubb,
+                                        matthewStafford,
+                                        jalenHurts, 
+                                        patrickMahomes,
+                                        saquonBarkley,
+                                        cooperKupp,
+                                        tyreekHill,
+                                        justinJefferson]

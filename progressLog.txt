@@ -24,3 +24,10 @@ PROGRESS LOG
 22. Decided on having max users shown in presence be driven by a chatroom property
 23. Added more dummy data for display
 24. Moved vPresence directive into its own file and imported it
+25. Considered what to do for authorization
+26. Decided to just allow user to swap between dummy users
+27. Created a user store with Pinia to access current user throughout the app
+28. Added logic to hide the current user and react to user changes
+29. Moved Navbar into its own component
+30. Added a store for the list of chatrooms
+31. Added Join/Leave buttons and associated functionality

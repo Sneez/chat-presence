@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import ChatroomList from './components/ChatroomList.vue';
+import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
-  <ChatroomList />
+  <div class="section">
+    <div class="container">
+      <Navbar />
+      <ChatroomList />
+    </div>
+  </div>
 </template>
 
 <style>
