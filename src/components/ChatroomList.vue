@@ -29,8 +29,8 @@ function isCurrentUserInChatroom (chat: Chatroom) {
     <nav class="is-primary panel">
         <div v-for="chat of chatrooms" v-presence="chat" :id="chat.id"
         class="panel-block is-flex is-align-items-center space-between">
-            <button class="button" v-if="!isCurrentUserInChatroom(chat)" @click="handleJoin(chat.name)">Join</button>
-            <button class="button" v-else @click="handleUnsubscribe(chat.name)">Leave</button>
+            <button class="button is-primary is-light" v-if="!isCurrentUserInChatroom(chat)" @click="handleJoin(chat.name)">Join</button>
+            <button class="button is-danger is-light" v-else @click="handleUnsubscribe(chat.name)">Leave</button>
         </div>
     </nav>
 

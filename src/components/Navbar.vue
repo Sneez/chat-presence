@@ -25,13 +25,13 @@ watch(selectedUserId, (newId) => {
 
 <template>
 
-    <div class="box flex space-between align-center">
-        <div class="flex">
-            <input class="input" type="text" placeholder="Add new Chatroom" v-model="newChatroomName">
-            <button class="button" @click="handleSubmit">Submit</button>
+    <div class="box is-flex space-between is-align-items-center">
+        <div class="is-flex">
+            <input class="input border-radius-left" type="text" placeholder="Add new Chatroom" v-model="newChatroomName">
+            <button id="submit-button" class="button is-light border-radius-right" @click="handleSubmit">Submit</button>
         </div>
         
-        <div class="flex align-center">
+        <div class="is-flex is-align-items-center">
             <div class="mr10">Current User:</div>
             <div class="select">
                 <select v-model="selectedUserId">
