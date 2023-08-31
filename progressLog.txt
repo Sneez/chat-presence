@@ -32,3 +32,4 @@ PROGRESS LOG
 30. Added a store for the list of chatrooms
 31. Added Join/Leave buttons and associated functionality
 32. Added button style/colors, cleaned up some css
+33. Properly refactored computed properties in presence popover
