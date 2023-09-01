@@ -1,6 +1,6 @@
 # Presence App
 
-This is a demo app written in Vue 3 that shows the user a homepage with a list of chatrooms they can create/join.  When hovering on a chatroom's name, the chatroom's 'presence' is shown, which is a popover that shows the profile images/names of some of the members in the chat. Users can switch between 12 dummy users in the form of NFL football players (the season is starting soon!) for the sake of emulating different users quickly.
+This is a demo app written in Vue 3 that shows the user a homepage with a list of chatrooms they can create/join.  When hovering on a chatroom's name, the chatroom's 'presence' is shown, which is a popover that shows the profile images/names of some of the members in the chat. Users can switch between 12 dummy users in the form of NFL football players for the sake of emulating different users quickly.  The presence popovers have a maximum number of users shown, which is defined as a property on the chatroom data. Any additional users will be included as a title on the '+x more' text, which can be seen by hovering over that text.  Also something to note: the current user is not shown in the presence popover for chatrooms that they are subscribed to.  The purpose is to see who *else* is in the chatroom!
 
 ![Alt text](./src/assets/presence.png)
 
