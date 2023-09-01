@@ -1,18 +1,29 @@
-# Vue 3 + TypeScript + Vite
+# Presence App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a demo app written in Vue 3 that shows the user a homepage with a list of chatrooms they can create/join.  When hovering on a chatroom's name, the chatroom's 'presence' is shown, which is a popover that shows the profile images/names of some of the members in the chat. Users can switch between 12 dummy users in the form of NFL football players (the season is starting soon!) for the sake of emulating different users quickly.
 
-## Recommended IDE Setup
+![Alt text](./src/assets/presence.png)
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Installation Instructions
 
-## Type Support For `.vue` Imports in TS
+```
+git clone https://github.com/Sneez/chat-presence.git
+cd chat-presence
+npm install
+npm run dev
+```
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Technologies Used
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+This project is a Vue 3 application that runs on Vite, a build tool that provides a fast development experience for modern web projects.  It leverages Typescript and Pinia for state management. The popovers use a library called Vue 3 Popper, which utilises the latest version of PopperJS to place popovers in the correct spot.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## How it works
+
+The challenge of this project was to implement a service in the form of a directive that can dynamically inject the presence popover into the DOM based on the chatroom's list of associated users. The way this is achieved is that on mount, elements with the v-presence attribute dynamically inject the associated popover component into the DOM as the element's first child.  The chat data passed into the directive's attribute value gets passed as a prop into the popover component that is then initialized and added to the DOM.
+
+## Testing Instructions
+To run unit tests, run:
+```
+npx vitest
+```
+The testing framework used is a unit test framework called Vitest, which piggy-backs off of Vite for very fast testing.
