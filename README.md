@@ -15,7 +15,7 @@ npm run dev
 
 ## Technologies Used
 
-This project is a Vue 3 application that runs on Vite, a build tool that provides a fast development experience for modern web projects.  It leverages Typescript and Pinia for state management. The popovers use a library called Vue 3 Popper, which utilises the latest version of PopperJS to place popovers in the correct spot.
+This project is a Vue 3 application that runs on Vite, a build tool that provides a fast development experience for modern web projects.  It leverages Typescript and Pinia for state management. The popovers use a library called Vue 3 Popper, which utilises the latest version of PopperJS to place popovers in the correct spot. The testing framework used is a unit test framework called Vitest, which piggy-backs off of Vite for very fast testing.
 
 ## How it works
 
@@ -26,4 +26,3 @@ To run unit tests, run:
 ```
 npx vitest
 ```
-The testing framework used is a unit test framework called Vitest, which piggy-backs off of Vite for very fast testing.
