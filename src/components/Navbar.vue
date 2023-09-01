@@ -14,7 +14,6 @@ let newChatroomName = ''
 function handleSubmit() {
     if( newChatroomName !== ''){
         chatStore.addChatroom(newChatroomName)
-        newChatroomName = ''
     }
 }
 

@@ -9,7 +9,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vue/test-utils": "^2.2.0",
+    "jsdom": "^20.0.3",
     "pinia": "^2.0.14",
+    "vitest": "^0.24.3",
     "vue": "^3.2.45",
     "vue3-popper": "^1.5.0"
   },

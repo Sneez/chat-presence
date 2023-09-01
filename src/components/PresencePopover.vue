@@ -12,7 +12,6 @@ const props = defineProps<{
 const max = props.chatroom.maxPresence
 const userStore = useUsers()
 
-
 let chatUsersExcludingCurrent = computed(() => {
 
     let chatUsers = [...props.chatroom.users]
@@ -35,7 +34,6 @@ let leftOutNames = computed(() => {
             if (firstFlag) firstFlag = false
         })
     }
-
     return remainingNamesString
 })
 
@@ -44,14 +42,14 @@ let leftOutNames = computed(() => {
 <template>
 
     <Popper hover arrow placement="right">
-        <div>{{ chatroom.name }}</div>
+        <div class="chat-name">{{ chatroom.name }}</div>
         <template #content>
             <div class="center-items">
-                <div v-for="user of chatUsersExcludingCurrent.slice(0, max)" class="bottom-spacing">
+                <div v-for="user of chatUsersExcludingCurrent.slice(0, max)" class="bottom-spacing user-info">
                     <img :src="user.imageUrl" class="user-image" />
                     <div class="user-name">{{ user.username }}</div>
                 </div>
-                <div v-if="chatUsersExcludingCurrent.length > max" class="user-name" :title="leftOutNames">
+                <div v-if="chatUsersExcludingCurrent.length > max" class="user-name" :title="leftOutNames" data-id="leftOutNames">
                     +{{ chatUsersExcludingCurrent.length - max }} more
                 </div>
             </div>
